@@ -1,4 +1,4 @@
-console.log("card.js loaded");
+console.log("card.js loaded...");
 
 
 function createCard(parentElem, student){
@@ -11,16 +11,20 @@ function createCard(parentElem, student){
     createCardFooter(card, student);
 }
 
+
 function createCardHeader(card, student){
     let cardHeader = document.createElement("div");
     cardHeader.classList.add("card-header");
+    cardHeader.style.backgroundImage = "url('" + generateRandomImage() + "')";
     card.appendChild(cardHeader);
 
     let avatar = document.createElement("img");
     avatar.classList.add("avatar");
     avatar.src = student.avatar;
+    avatar.style.borderColor = student.color;
     cardHeader.appendChild(avatar);
 }
+
 
 function createCardBody(card, student){
     let cardBody = document.createElement("div");
@@ -30,6 +34,7 @@ function createCardBody(card, student){
     let title = document.createElement("div");
     title.classList.add("title");
     title.innerText = student.title;
+    title.style.color = student.color;
     cardBody.appendChild(title);
 
     let name = document.createElement("h2");
@@ -42,21 +47,24 @@ function createCardBody(card, student){
     cardBody.appendChild(description);
 }
 
+
 function createCardFooter(card, student){
     let cardFooter = document.createElement("div");
     cardFooter.classList.add("card-footer");
+    cardFooter.style.backgroundColor = student.color;
     card.appendChild(cardFooter);
 
     for (let s in student.stats) {
-        let statDiv = document.createElement("div");
-        statDiv.classList.add("stats");
-        cardFooter.appendChild(statDiv);
+        let statsDiv = document.createElement("div");
+        statsDiv.classList.add("stats");
+        cardFooter.appendChild(statsDiv);
 
-        let statValue = document.createElement("div");
-        statDiv.classList.add("stats-value");
-        statDiv.appendChild(statValue);
+        let statsValue = document.createElement("div");
+        statsValue.classList.add("stats-value");
+        statsValue.innerText = student.stats[s];
+        statsDiv.appendChild(statsValue);
 
-        let statName = document.createTextNode(s);
-        statDiv.appendChild(statName);
+        let statsName = document.createTextNode(s);
+        statsDiv.appendChild(statsName);
     }
 }

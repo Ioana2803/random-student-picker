@@ -41,6 +41,15 @@ body{
     align-items: flex-end;
 }
 
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    /* border: 1px solid white; */
+    position: relative;
+    top: 45px;
+}
+
 .card-body{
     flex: 3;
     display: flex;
@@ -83,11 +92,3 @@ body{
     font-size: 1.3rem;
 }
 
-.card-header img{
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    border: 1px solid white;
-    position: relative;
-    top: 45px;
-}
