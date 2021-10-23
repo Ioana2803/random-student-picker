@@ -18,6 +18,12 @@ body{
     flex-wrap: wrap;
 }
 
+.card:hover{
+    /* position: relative; */
+    top: -0.8rem;
+    left: -0.8rem;
+}
+
 .card{
     background-color: var(--card-bg-color);
     height: 32rem;
@@ -27,6 +33,17 @@ body{
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     margin: 1rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    /* transition: all 700ms ease; */
+    transition-duration: 5000ms;
+    transition-timing-function: ease-out;
+}
+
+.hide{
+    top: 70rem;
+    left: -70rem;
 }
 
 .card-header{    

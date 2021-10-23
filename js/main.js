@@ -95,3 +95,23 @@ const cardsContainer = document.querySelector(".cards-container");
 for (let i = 0; i < students.length; i++) {
     createCard(cardsContainer, students[i]);
 }
+
+
+function hideCards(){
+    let winner = randomArrayElement(students.length)
+
+    let cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++) {
+        if (i != winner){
+            cards[i].classList.add("hide");
+        }
+    }
+}
+
+
+function resetCards(){
+    let cards = document.querySelectorAll(".card");
+    for (let i = 0; i < cards.length; i++) {
+            cards[i].classList.remove("hide");
+    }
+}
